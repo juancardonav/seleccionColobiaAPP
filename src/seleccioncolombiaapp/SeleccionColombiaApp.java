@@ -14,9 +14,10 @@ public class SeleccionColombiaApp {
         Jugador jugador = new Jugador();
         int cont=0;
         int opcion;
+        
         do{
            
-            System.out.println("-------------Bienvenido señor Reinaldo -------------");
+            System.out.println("-------------Bienvenido Señor Reinaldo -------------");
             System.out.println("--*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*--* ");
             System.out.println("1.  Agregar un Jugador");
             System.out.println("2.  Buscar un Jugador");
@@ -41,7 +42,6 @@ public class SeleccionColombiaApp {
                    System.out.print("Digite el apellido del jugador: ");
                    jugador.setApellido(entrada.next());
                    
-                   
                    System.out.print("Digite la posición del jugador: ");
                    jugador.setPosicion(entrada.next());
                    
@@ -53,9 +53,9 @@ public class SeleccionColombiaApp {
                    }else{
                         jugador.setEdad(edad);
                    }
-                   
                    System.out.print("Digite el equipo del jugador: ");
                    jugador.setEquipo(entrada.next());
+                   
                    
                    jugadores.add(cont, jugador);
                    
@@ -67,6 +67,15 @@ public class SeleccionColombiaApp {
                    for (int i=0;i<jugadores.size();i++) {
                        if(jugadores.get(i).getNumeroCamiseta()==entrada.nextByte()){
                            System.out.println("Efectivamente lo convocaste");
+                        System.out.println(" ");    
+                       System.out.print(" Número de Camiseta: "+ jugadores.get(i).getNumeroCamiseta()+" ,"); ;
+                       System.out.print(" Nombre: "+jugadores.get(i).getNombre()+" ,"); ;
+                       System.out.print(" Apellido:  "+jugadores.get(i).getApellido()+" ,"); 
+                       System.out.print(" Posición:  "+jugadores.get(i).getPosicion()+" ,"); 
+                       System.out.print(" Edad:  "+jugadores.get(i).getEdad()+" ,"); 
+                       System.out.print(" Equipo:  "+jugadores.get(i).getEquipo()+" ."); 
+                        System.out.println(" "); 
+                        System.out.println(" "); 
                        }else{
                            System.out.println("Dele la oportunidad al muchacho");
                        }  
@@ -78,7 +87,7 @@ public class SeleccionColombiaApp {
                    System.out.println(" ");
                    System.out.println("--- Editar un Jugador ---");
                    System.out.println(" ");
-                   System.out.print("Digite el número de la camiseta del jugador que desea editar : ");
+                   System.out.print("Digite el número de la camiseta del jugador que desea editar: ");
                    System.out.println(" ");
                   
                    
@@ -87,7 +96,7 @@ public class SeleccionColombiaApp {
                        
                        if(jugadores.get(i).getNumeroCamiseta()==entrada.nextByte()){
                            System.out.println("Ingresa los nuevos datos");
-                           System.out.print("Digite el número de la camiseta: : ");
+                           System.out.print("Digite el número de la camiseta: ");
                            jugadores.get(i).setNumeroCamiseta(entrada.nextByte());
 
                             System.out.print("Digite el nombre del jugador: ");

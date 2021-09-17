@@ -65,7 +65,7 @@ public class Jugador {
 
     public void setPosicion(String posicion) {
         if(posicion.isEmpty()){
-            
+            System.out.println("la posción no debe de estar vacia");
         }else{
             this.posicion = posicion;
         }
