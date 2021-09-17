@@ -14,9 +14,18 @@ public class SeleccionColombiaApp {
         Jugador jugador = new Jugador();
         int cont=0;
         int opcion;
+        int cantidad=0;
+
+            byte numeroCamiseta;
+            String nombre;
+            String apellido;
+            String posicion;
+            byte edad;
+            String equipo;
+            
+            Jugador auxiliar = new Jugador();
         
-        do{
-           
+        do{  
             System.out.println("-------------Bienvenido Señor Reinaldo -------------");
             System.out.println("--*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*-- --*--* ");
             System.out.println("1.  Agregar un Jugador");
@@ -28,38 +37,51 @@ public class SeleccionColombiaApp {
             opcion=entrada.nextInt();
            
             switch(opcion){
+                
+                
                case 1:
+                                     
                    System.out.println(" ");
                    System.out.println("--- Agregar un Jugador ---");
                    System.out.println(" ");
                    
                   System.out.print("Digite el número de la camiseta: ");
-                   jugador.setNumeroCamiseta(entrada.nextByte());
+                   numeroCamiseta=(entrada.nextByte());
                    
                    System.out.print("Digite el nombre del jugador: ");
-                   jugador.setNombre(entrada.next());
+                   nombre=(entrada.next());
                    
                    System.out.print("Digite el apellido del jugador: ");
-                   jugador.setApellido(entrada.next());
+                   apellido=(entrada.next());
                    
                    System.out.print("Digite la posición del jugador: ");
-                   jugador.setPosicion(entrada.next());
+                   posicion=(entrada.next());
                    
-                   System.out.print("Digite la edad del jugador: ");
-                   byte edad = entrada.nextByte();
+                   System.out.print("Digite la edad del jugador: ");                   edad = entrada.nextByte();
                    if(edad<=15){
                        System.out.print("Edad mínima 16 años, digite la edad del jugador de nuevo: ");
-                       jugador.setEdad(entrada.nextByte());
+                       edad=(entrada.nextByte());
                    }else{
                         jugador.setEdad(edad);
                    }
                    System.out.print("Digite el equipo del jugador: ");
-                   jugador.setEquipo(entrada.next());
+                   equipo=(entrada.next());
                    
+                   auxiliar = new Jugador();
                    
-                   jugadores.add(cont, jugador);
+                   auxiliar.setNumeroCamiseta(numeroCamiseta);
+                   auxiliar.setNombre(nombre);
+                   auxiliar.setApellido(apellido);
+                   auxiliar.setEdad(edad);
+                   auxiliar.setEquipo(equipo);
+                   auxiliar.setPosicion(posicion);
+
+                   
+                   jugadores.add(auxiliar);
+                   //cont++;
                    
                        break;
+                   
                case 2:
                    System.out.println(" ");
                    System.out.println("--- Buscar un Jugador ---");
@@ -74,8 +96,8 @@ public class SeleccionColombiaApp {
                        System.out.print(" Posición:  "+jugadores.get(i).getPosicion()+" ,"); 
                        System.out.print(" Edad:  "+jugadores.get(i).getEdad()+" ,"); 
                        System.out.print(" Equipo:  "+jugadores.get(i).getEquipo()+" ."); 
-                        System.out.println(" "); 
-                        System.out.println(" "); 
+                       System.out.println(" ");
+                        break;
                        }else{
                            System.out.println("Dele la oportunidad al muchacho");
                        }  
@@ -144,7 +166,7 @@ public class SeleccionColombiaApp {
                        break;
            }
             //System.out.println(jugadores.get(cont).getNombre());
-        cont++;    
+            
         }while(opcion!=5);
        
         

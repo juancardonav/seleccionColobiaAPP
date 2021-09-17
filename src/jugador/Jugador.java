@@ -97,13 +97,21 @@ public class Jugador {
         }    
     }
     
-    
-
-
-    
-    
-
-    
-    
-    
-}
+     @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();                                                                       
+        sb.append("\nnumeroCamiseta: ");
+        sb.append(numeroCamiseta);
+        sb.append("\nombre: ");
+        sb.append(nombre);
+        sb.append("\napellido: ");
+        sb.append(apellido);
+        sb.append("\nposicion: ");
+        sb.append(posicion);   
+        sb.append("\nedad: ");
+        sb.append(edad); 
+         sb.append("\nequipo: ");
+        sb.append(equipo);        
+        return sb.toString();
+    }   
+}    
